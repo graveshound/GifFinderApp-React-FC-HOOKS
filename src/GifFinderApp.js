@@ -8,8 +8,8 @@ export const GifFinderApp = () => {
     const [categories,setCategories]=useState(['Anime','Crypto','Rock'])
 
   // const handleAdd =()=>{
-   //     //categories.push('Software');
-    //    //setCategories([...categories, 'Software'])
+   //     categories.push('Software');
+    //    setCategories([...categories, 'Software'])
     //    setCategories((cats)=>[...cats,'Software'])
     //    console.log(categories)
    // }
@@ -17,7 +17,7 @@ export const GifFinderApp = () => {
     return (
         <>
             <h2>Gif Finder App</h2>
-            <AddCategory />
+            <AddCategory setCategories={ setCategories }/>
             
             <hr />
             

@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 import { AddCategory } from './components/AddCategory'
+import { GifGrid } from './components/GifGrid'
 
 
 export const GifFinderApp = () => {
 
     //const categories=['Anime','Crypto','Rock']
-    const [categories,setCategories]=useState(['Anime','Crypto','Rock'])
+    const [categories,setCategories]=useState(['Anime'])
 
   // const handleAdd =()=>{
    //     categories.push('Software');
@@ -23,9 +24,11 @@ export const GifFinderApp = () => {
             
             <ol>
                 { 
-                    categories.map((category)=>{
-                        return <li key={category}>{category}</li>
-                    })
+                    categories.map((category)=>(
+                        <GifGrid 
+                        category={category}
+                        key={category} />
+                    ))
                 }
             </ol>
         </>

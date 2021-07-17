@@ -10,11 +10,11 @@ export const GifGrid = ({category}) => {
     },[])
 
     const API_KEY='2vvv5c6ZhXIOqwnlIF6D3WsA6LLkC79b';
-    
+    const N_RESULTS='9'
     const getGifs = async() =>{
 
         
-    const url =`https://api.giphy.com/v1/gifs/search?q=Saitama&limit=10&api_key=${API_KEY}`;
+    const url =`https://api.giphy.com/v1/gifs/search?q=Saitama&limit=${N_RESULTS}&api_key=${API_KEY}`;
 
         const resp = await fetch(url);
         const {data}= await resp.json();
@@ -26,7 +26,7 @@ export const GifGrid = ({category}) => {
                 url:img.images?.downsized_medium.url
             }
         })
-        console.log(gifs)
+        
         setImages(gifs)
 
     }
@@ -34,12 +34,12 @@ export const GifGrid = ({category}) => {
     
     
     return (
-        <div>
+        <>
             <h3>{category}</h3>
-           
+            <div className="card-grid">
                 {
                     images.map( img => {
-                        <GifGridItem 
+                        return <GifGridItem 
                         key={img.id} 
                         {...img} 
                         />
@@ -47,5 +47,6 @@ export const GifGrid = ({category}) => {
                 }
           
         </div>
+        </>
     )
 }

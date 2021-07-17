@@ -6,7 +6,7 @@ import { GifGrid } from './components/GifGrid'
 export const GifFinderApp = () => {
 
     //const categories=['Anime','Crypto','Rock']
-    const [categories,setCategories]=useState(['Anime'])
+    const [categories,setCategories]=useState(['Saitama'])
 
   // const handleAdd =()=>{
    //     categories.push('Software');
